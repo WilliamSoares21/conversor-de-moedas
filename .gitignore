@@ -1,15 +1,26 @@
-# Maven
+# Arquivos de Compilação do Maven
 target/
+pom.xml.tag
+pom.xml.bak
+release.properties
 
+# Arquivos/Diretórios de IDEs
 # Eclipse
 .classpath
 .project
 .settings/
 
-# IDE files
+# IntelliJ IDEA
 *.iml
 .idea/
+
+# VS Code
 .vscode/
 
-# OS/Temporary files
+# Arquivos de Log e Temporários
+*.log
+*~
+
+# Sistema Operacional
 .DS_Store
+Thumbs.db
