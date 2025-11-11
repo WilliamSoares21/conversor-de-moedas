@@ -24,3 +24,6 @@ release.properties
 # Sistema Operacional
 .DS_Store
 Thumbs.db
+
+# Variáveis de Ambiente e Configurações Locais
+.env
