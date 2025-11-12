@@ -7,12 +7,14 @@ public class App {
     Dotenv dotenv = Dotenv.load();
 
     String apiKey = dotenv.get("API_KEY");
+    String moeda_1 = "BRL";
+    String moeda_2 = "EUR";
 
     if (apiKey != null) {
       System.out.println("API Key carregada com sucesso");
       try {
-        String resultado = ConversorService.fazerRequisicao("EUR", apiKey);
-        System.out.println("Resultado da requisição: " + resultado);
+        Moeda resultadoConversao = ConversorService.fazerRequisicao(apiKey, moeda_1, moeda_2);
+        System.out.println("Resultado da requisição: " + resultadoConversao);
       } catch (Exception e) {
         System.out.println("Erro: " + e.getStackTrace());
       }
