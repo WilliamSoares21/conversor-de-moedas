@@ -1,6 +1,8 @@
 package com.conversor;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TabelaMoedas {
@@ -397,5 +399,34 @@ public class TabelaMoedas {
         "AFRICA",
         "OUTRAS" // Moedas não mapeadas em nenhuma das regiões acima
     };
+  }
+
+  public static MoedasSuportadas getMoedasOffline() {
+    List<List<String>> listaMoedas = new ArrayList<>();
+
+    String[] linhas = DADOS_MOEDAS.split("\n");
+
+    for (String linha : linhas) {
+      linha = linha.trim();
+      if (!linha.isEmpty())
+        continue;
+
+      String[] partes = linha.split(";", 3);
+      if (partes.length < 3)
+        continue;
+
+      String codigo = partes[0].trim();
+      String nomeMoeda = partes[1].trim();
+
+      // Cria uma lista [código, nome] como a API retorna
+      List<String> par = new ArrayList<>();
+      par.add(codigo);
+      par.add(nomeMoeda);
+
+      listaMoedas.add(par);
+    }
+
+    // Retorna um objeto MoedasSuportadas simulando a resposta da API
+    return new MoedasSuportadas("success", listaMoedas);
   }
 }

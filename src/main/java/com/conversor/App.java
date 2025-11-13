@@ -13,8 +13,23 @@ public class App {
     String apiKey = dotenv.get("API_KEY");
     String moedaDeOrigem;
     String moedaDeDestino;
-    System.out.println("Seja bem vindo ao conversor de Moedas!");
-    System.out.println("Nossas moedas disponíveis são: EUR, USD, GBP, ARS, JPY, KRW e muitas outras!");
+
+    MoedasSuportadas moedasDisponiveis;
+    System.out.println("#-- Seja bem vindo ao conversor de Moedas! --#");
+    System.out.println("\nCarregando lista de moedas disponíveis...");
+    try {
+      moedasDisponiveis = ConversorService.buscarMoedasSuportadas(apiKey);
+      System.out
+          .println("\nTudo OK, " + moedasDisponiveis.supportedCodes().size() + " moedas foram carregadas da API!");
+      System.out.println("\nNossas moedas disponíveis são: EUR, USD, GBP, ARS, JPY, KRW e muitas outras!");
+
+    } catch (Exception e) {
+      System.out.println("\nErro: Não foi possivel carregar a lista de moedas pela API");
+      System.out.println("\nUsando lista offline de moedas como fallback...");
+      moedasDisponiveis = TabelaMoedas.getMoedasOffline();
+      System.out.println(
+          moedasDisponiveis.supportedCodes().size() + " moedas da API, as moedas estão sendo carregadas offline");
+    }
 
     while (true) {
       System.out.println("O que deseja fazer ?");
@@ -31,14 +46,14 @@ public class App {
             moedaDeOrigem = scan.nextLine().toUpperCase();
             System.out.println("Insira a moeda de destino (ex: USD, EUR):");
             moedaDeDestino = scan.nextLine().toUpperCase();
+
             try {
               Moeda resultadoConversao = ConversorService.fazerRequisicao(apiKey, moedaDeOrigem, moedaDeDestino);
               System.out.println("Resultado da requisição: " + resultadoConversao);
             } catch (MoedaNaoEncontradaException e) {
               System.out.println("Erro: " + e.getMessage());
-
             } catch (Exception e) {
-              System.out.println("Erro: " + e.getStackTrace());
+              System.out.println("Erro inesperado: " + e.getStackTrace());
             }
           } else {
             System.out.println("Erro: API Key não encontrada nas variáveis de ambiente.");
@@ -57,7 +72,7 @@ public class App {
           String escolhaRegiao = scan.nextLine();
 
           if (escolhaRegiao.equals("0")) {
-            break; // Volta ao menu principal
+            break;
           }
 
           try {

@@ -58,4 +58,23 @@ public class ConversorService {
     return lerJson(response);
   }
 
+  public static MoedasSuportadas buscarMoedasSuportadas(String apiKey) throws IOException, InterruptedException {
+    String url = "https://v6.exchangerate-api.com/v6/" + apiKey + "/codes";
+
+    HttpClient client = HttpClient.newHttpClient();
+    HttpRequest request = HttpRequest.newBuilder()
+        .uri(URI.create(url))
+        .GET()
+        .build();
+
+    HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+    Gson gson = new GsonBuilder()
+        .setPrettyPrinting()
+        .create();
+
+    return gson.fromJson(response.body(), MoedasSuportadas.class);
+
+  }
+
 }
