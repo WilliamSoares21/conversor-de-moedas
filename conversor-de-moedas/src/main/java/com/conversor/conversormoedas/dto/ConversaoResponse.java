@@ -1,4 +1,4 @@
-package com.conversor.dto;
+package com.conversor.conversormoedas.dto;
 
 public record ConversaoResponse(
     String moedaOrigem,

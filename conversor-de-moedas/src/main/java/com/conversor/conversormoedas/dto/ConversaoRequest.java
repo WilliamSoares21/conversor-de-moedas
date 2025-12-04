@@ -1,4 +1,4 @@
-package com.conversor.dto;
+package com.conversor.conversormoedas.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;

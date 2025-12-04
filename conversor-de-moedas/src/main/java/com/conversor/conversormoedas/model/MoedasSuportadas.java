@@ -1,4 +1,4 @@
-package com.conversor.model;
+package com.conversor.conversormoedas.model;
 
 import com.google.gson.annotations.SerializedName;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.conversor.controller;
+package com.conversor.conversormoedas.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.conversor.dto.ConversaoRequest;
-import com.conversor.dto.ConversaoResponse;
-import com.conversor.exception.MoedaNaoEncontradaException;
-import com.conversor.model.Moeda;
-import com.conversor.model.MoedasSuportadas;
-import com.conversor.service.ConversorService;
+import com.conversor.conversormoedas.dto.ConversaoRequest;
+import com.conversor.conversormoedas.dto.ConversaoResponse;
+import com.conversor.conversormoedas.exception.MoedaNaoEncontradaException;
+import com.conversor.conversormoedas.model.Moeda;
+import com.conversor.conversormoedas.model.MoedasSuportadas;
+import com.conversor.conversormoedas.service.ConversorService;
 
 import jakarta.validation.Valid;
 

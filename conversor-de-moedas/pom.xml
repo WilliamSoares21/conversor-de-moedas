@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.conversor</groupId>
-	<artifactId>conversor-de-moedas</artifactId>
+	<artifactId>conversor-moedas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>conversor-de-moedas</name>
+	<name>conversor-moedas</name>
 	<description>O objetivo principal deste projeto é oferecer uma solução Full Stack completa e intuitiva para a conversão de valores monetários.  A aplicação busca as taxas de câmbio mais recentes e em tempo real através de uma API externa para garantir a precisão dos cálculos. O usuário pode, de forma simples e rápida, informar o valor a ser convertido e visualizar instantaneamente o resultado na moeda desejada, bem como ter a opção de consultar um histórico de transações.</description>
 	<url/>
 	<licenses>

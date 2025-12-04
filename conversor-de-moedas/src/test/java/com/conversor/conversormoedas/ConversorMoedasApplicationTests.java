@@ -1,10 +1,10 @@
-package com.conversor.conversor_de_moedas;
+package com.conversor.conversormoedas;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ConversorDeMoedasApplicationTests {
+class ConversorMoedasApplicationTests {
 
 	@Test
 	void contextLoads() {

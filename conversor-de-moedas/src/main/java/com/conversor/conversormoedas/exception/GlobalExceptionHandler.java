@@ -1,4 +1,4 @@
-package com.conversor.exception;
+package com.conversor.conversormoedas.exception;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;

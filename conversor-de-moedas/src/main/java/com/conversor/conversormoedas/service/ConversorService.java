@@ -1,4 +1,4 @@
-package com.conversor.service;
+package com.conversor.conversormoedas.service;
 
 import java.io.IOException;
 import java.net.URI;
@@ -9,10 +9,10 @@ import java.net.http.HttpResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.conversor.dto.ConversaoResponse;
-import com.conversor.exception.MoedaNaoEncontradaException;
-import com.conversor.model.Moeda;
-import com.conversor.model.MoedasSuportadas;
+import com.conversor.conversormoedas.dto.ConversaoResponse;
+import com.conversor.conversormoedas.exception.MoedaNaoEncontradaException;
+import com.conversor.conversormoedas.model.Moeda;
+import com.conversor.conversormoedas.model.MoedasSuportadas;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
