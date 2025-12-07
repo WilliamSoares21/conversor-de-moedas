@@ -1,31 +1,33 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import ConversorForm from './components/ConversorForm';
+import ListaMoedas from './components/ListaMoedas';
+import './styles/App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="card max-w-md w-full">
-        <h1 className="text-4xl font-bold text-gray-800 mb-2">
-          💱 Conversor de Moedas
-        </h1>
-        <p className="text-gray-600 mb-8">
-          Converta valores entre moedas em tempo real
-        </p>
-        
-        <button 
-          onClick={() => setCount((count) => count + 1)}
-          className="btn-primary w-full"
-        >
-          Teste Tailwind: {count} cliques
-        </button>
+    <Router>
+      <div className="app">
+        <header className="header">
+          <h1>💱 Conversor de Moedas</h1>
+          <nav className="nav">
+            <Link to="/" className="nav-link">Converter</Link>
+            <Link to="/moedas" className="nav-link">Lista de Moedas</Link>
+          </nav>
+        </header>
 
-        <p className="text-sm text-gray-500 mt-4 text-center">
-          ✅ Tailwind CSS configurado com sucesso!
-        </p>
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<ConversorForm />} />
+            <Route path="/moedas" element={<ListaMoedas />} />
+          </Routes>
+        </main>
+
+        <footer className="footer">
+          <p>Conversor de Moedas © 2025 - Desenvolvido com React + Spring Boot</p>
+        </footer>
       </div>
-    </div>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;
