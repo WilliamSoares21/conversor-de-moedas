@@ -9,8 +9,9 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class ConversorMoedasApplication {
 
 	public static void main(String[] args) {
-		// Carrega o .env do diretório atual do projeto
+		// Carrega o .env do diretório raiz do projeto
 		Dotenv dotenv = Dotenv.configure()
+			.directory("../")
 			.ignoreIfMissing()
 			.load();
 		

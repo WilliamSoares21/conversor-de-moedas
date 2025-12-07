@@ -20,7 +20,7 @@ import com.conversor.conversormoedas.service.ConversorService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/conversor")
+@RequestMapping("/conversor")
 @Validated
 public class ConversorController {
 

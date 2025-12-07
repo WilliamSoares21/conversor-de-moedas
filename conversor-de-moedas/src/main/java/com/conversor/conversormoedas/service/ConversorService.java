@@ -21,7 +21,7 @@ import com.google.gson.JsonParser;
 @Service
 public class ConversorService {
 
-  @Value("${exchangerate.api.key}")
+  @Value("${api.key}")
   private String apiKey;
 
   private final HttpClient httpClient;
